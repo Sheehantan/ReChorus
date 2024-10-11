@@ -1,0 +1,52 @@
+INFO:root:Namespace(model_name='BSARec')
+INFO:root:--------------------------------------------- BEGIN: 2024-10-09 20:55:58 ---------------------------------------------
+INFO:root:
+============================================
+ Arguments           | Values               
+============================================
+ alpha               | 0.5                 
+ batch_size          | 256                 
+ c                   | 3                   
+ dataset             | Grocery_and_Gourm...
+ dropout             | 0                   
+ early_stop          | 10                  
+ emb_size            | 64                  
+ epoch               | 200                 
+ eval_batch_size     | 256                 
+ gpu                 | 0                   
+ hidden_dropout_prob | 0.1                 
+ hidden_size         | 64                  
+ history_max         | 20                  
+ l2                  | 1e-06               
+ lr                  | 0.0001              
+ num_heads           | 4                   
+ num_layers          | 1                   
+ num_neg             | 1                   
+ num_workers         | 5                   
+ optimizer           | Adam                
+ random_seed         | 0                   
+ test_all            | 0                   
+ topk                | 5,10,20,50          
+============================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\SeqReader.pkl
+INFO:root:#params: 571712
+INFO:root:BSARec(
+  (i_embeddings): Embedding(8714, 64)
+  (p_embeddings): Embedding(21, 64)
+  (frequency_layer): ModuleList(
+    (0): FrequencyLayer(
+      (out_dropout): Dropout(p=0.1, inplace=False)
+      (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+    )
+  )
+  (attention_layer): ModuleList(
+    (0): MultiHeadAttention(
+      (q_linear): Linear(in_features=64, out_features=64, bias=True)
+      (k_linear): Linear(in_features=64, out_features=64, bias=True)
+      (v_linear): Linear(in_features=64, out_features=64, bias=True)
+    )
+  )
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6931 [12.5 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [8.0 s] *

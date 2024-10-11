@@ -1,0 +1,331 @@
+INFO:root:Namespace(model_name='BSARec')
+INFO:root:--------------------------------------------- BEGIN: 2024-10-09 09:39:09 ---------------------------------------------
+INFO:root:
+============================================
+ Arguments           | Values               
+============================================
+ alpha               | 0.5                 
+ batch_size          | 256                 
+ dataset             | Grocery_and_Gourm...
+ dropout             | 0                   
+ early_stop          | 10                  
+ emb_size            | 64                  
+ epoch               | 200                 
+ eval_batch_size     | 256                 
+ gpu                 |                     
+ hidden_dropout_prob | 0.1                 
+ hidden_size         | 64                  
+ history_max         | 20                  
+ l2                  | 1e-06               
+ lr                  | 0.0001              
+ num_heads           | 1                   
+ num_layers          | 1                   
+ num_neg             | 1                   
+ num_workers         | 5                   
+ optimizer           | Adam                
+ random_seed         | 0                   
+ test_all            | 0                   
+ topk                | 5,10,20,50          
+============================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\SeqReader.pkl
+INFO:root:Namespace(model_name='BSARec')
+INFO:root:--------------------------------------------- BEGIN: 2024-10-09 09:39:49 ---------------------------------------------
+INFO:root:
+============================================
+ Arguments           | Values               
+============================================
+ alpha               | 0.5                 
+ batch_size          | 256                 
+ dataset             | Grocery_and_Gourm...
+ dropout             | 0                   
+ early_stop          | 10                  
+ emb_size            | 64                  
+ epoch               | 200                 
+ eval_batch_size     | 256                 
+ gpu                 |                     
+ hidden_dropout_prob | 0.1                 
+ hidden_size         | 64                  
+ history_max         | 20                  
+ l2                  | 1e-06               
+ lr                  | 0.0001              
+ num_heads           | 1                   
+ num_layers          | 1                   
+ num_neg             | 1                   
+ num_workers         | 5                   
+ optimizer           | Adam                
+ random_seed         | 0                   
+ test_all            | 0                   
+ topk                | 5,10,20,50          
+============================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\SeqReader.pkl
+INFO:root:Namespace(model_name='BSARec')
+INFO:root:--------------------------------------------- BEGIN: 2024-10-09 12:43:00 ---------------------------------------------
+INFO:root:
+============================================
+ Arguments           | Values               
+============================================
+ alpha               | 0.5                 
+ batch_size          | 256                 
+ dataset             | Grocery_and_Gourm...
+ dropout             | 0                   
+ early_stop          | 10                  
+ emb_size            | 64                  
+ epoch               | 200                 
+ eval_batch_size     | 256                 
+ gpu                 |                     
+ hidden_dropout_prob | 0.1                 
+ hidden_size         | 64                  
+ history_max         | 20                  
+ l2                  | 1e-06               
+ lr                  | 0.0001              
+ num_heads           | 1                   
+ num_layers          | 1                   
+ num_neg             | 1                   
+ num_workers         | 5                   
+ optimizer           | Adam                
+ random_seed         | 0                   
+ test_all            | 0                   
+ topk                | 5,10,20,50          
+============================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\SeqReader.pkl
+INFO:root:#params: 571712
+INFO:root:BSARec(
+  (i_embeddings): Embedding(8714, 64)
+  (p_embeddings): Embedding(21, 64)
+  (frequency_layer): ModuleList(
+    (0): FrequencyLayer(
+      (out_dropout): Dropout(p=0.1, inplace=False)
+      (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+    )
+  )
+  (attention_layer): ModuleList(
+    (0): MultiHeadAttention(
+      (q_linear): Linear(in_features=64, out_features=64, bias=True)
+      (k_linear): Linear(in_features=64, out_features=64, bias=True)
+      (v_linear): Linear(in_features=64, out_features=64, bias=True)
+    )
+  )
+)
+INFO:root:Optimizer: Adam
+INFO:root:Namespace(model_name='BSARec')
+INFO:root:--------------------------------------------- BEGIN: 2024-10-09 12:49:56 ---------------------------------------------
+INFO:root:
+============================================
+ Arguments           | Values               
+============================================
+ alpha               | 0.5                 
+ batch_size          | 256                 
+ dataset             | Grocery_and_Gourm...
+ dropout             | 0                   
+ early_stop          | 10                  
+ emb_size            | 64                  
+ epoch               | 200                 
+ eval_batch_size     | 256                 
+ gpu                 |                     
+ hidden_dropout_prob | 0.1                 
+ hidden_size         | 64                  
+ history_max         | 20                  
+ l2                  | 1e-06               
+ lr                  | 0.0001              
+ num_heads           | 1                   
+ num_layers          | 1                   
+ num_neg             | 1                   
+ num_workers         | 5                   
+ optimizer           | Adam                
+ random_seed         | 0                   
+ test_all            | 0                   
+ topk                | 5,10,20,50          
+============================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\SeqReader.pkl
+INFO:root:#params: 571712
+INFO:root:BSARec(
+  (i_embeddings): Embedding(8714, 64)
+  (p_embeddings): Embedding(21, 64)
+  (frequency_layer): ModuleList(
+    (0): FrequencyLayer(
+      (out_dropout): Dropout(p=0.1, inplace=False)
+      (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+    )
+  )
+  (attention_layer): ModuleList(
+    (0): MultiHeadAttention(
+      (q_linear): Linear(in_features=64, out_features=64, bias=True)
+      (k_linear): Linear(in_features=64, out_features=64, bias=True)
+      (v_linear): Linear(in_features=64, out_features=64, bias=True)
+    )
+  )
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6508 [42.8 s]    dev=(HR@5:0.2388,NDCG@5:0.1573) [7.8 s] *
+INFO:root:Epoch 2     loss=0.5169 [42.1 s]    dev=(HR@5:0.2459,NDCG@5:0.1596) [7.6 s] *
+INFO:root:Namespace(model_name='BSARec')
+INFO:root:--------------------------------------------- BEGIN: 2024-10-09 12:52:27 ---------------------------------------------
+INFO:root:
+============================================
+ Arguments           | Values               
+============================================
+ alpha               | 0.5                 
+ batch_size          | 256                 
+ dataset             | Grocery_and_Gourm...
+ dropout             | 0                   
+ early_stop          | 10                  
+ emb_size            | 64                  
+ epoch               | 200                 
+ eval_batch_size     | 256                 
+ gpu                 | 0                   
+ hidden_dropout_prob | 0.1                 
+ hidden_size         | 64                  
+ history_max         | 20                  
+ l2                  | 1e-06               
+ lr                  | 0.0001              
+ num_heads           | 1                   
+ num_layers          | 1                   
+ num_neg             | 1                   
+ num_workers         | 5                   
+ optimizer           | Adam                
+ random_seed         | 0                   
+ test_all            | 0                   
+ topk                | 5,10,20,50          
+============================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\SeqReader.pkl
+INFO:root:#params: 571712
+INFO:root:BSARec(
+  (i_embeddings): Embedding(8714, 64)
+  (p_embeddings): Embedding(21, 64)
+  (frequency_layer): ModuleList(
+    (0): FrequencyLayer(
+      (out_dropout): Dropout(p=0.1, inplace=False)
+      (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+    )
+  )
+  (attention_layer): ModuleList(
+    (0): MultiHeadAttention(
+      (q_linear): Linear(in_features=64, out_features=64, bias=True)
+      (k_linear): Linear(in_features=64, out_features=64, bias=True)
+      (v_linear): Linear(in_features=64, out_features=64, bias=True)
+    )
+  )
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6931 [12.7 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.9 s] *
+INFO:root:Epoch 2     loss=0.6931 [9.6 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.8 s] *
+INFO:root:Epoch 3     loss=0.6931 [9.7 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.6 s] *
+INFO:root:Namespace(model_name='BSARec')
+INFO:root:--------------------------------------------- BEGIN: 2024-10-09 12:53:45 ---------------------------------------------
+INFO:root:
+============================================
+ Arguments           | Values               
+============================================
+ alpha               | 0.5                 
+ batch_size          | 256                 
+ dataset             | Grocery_and_Gourm...
+ dropout             | 0                   
+ early_stop          | 10                  
+ emb_size            | 64                  
+ epoch               | 200                 
+ eval_batch_size     | 256                 
+ gpu                 | 0                   
+ hidden_dropout_prob | 0.1                 
+ hidden_size         | 64                  
+ history_max         | 20                  
+ l2                  | 1e-06               
+ lr                  | 0.0001              
+ num_heads           | 1                   
+ num_layers          | 1                   
+ num_neg             | 1                   
+ num_workers         | 5                   
+ optimizer           | Adam                
+ random_seed         | 0                   
+ test_all            | 0                   
+ topk                | 5,10,20,50          
+============================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\SeqReader.pkl
+INFO:root:#params: 571712
+INFO:root:BSARec(
+  (i_embeddings): Embedding(8714, 64)
+  (p_embeddings): Embedding(21, 64)
+  (frequency_layer): ModuleList(
+    (0): FrequencyLayer(
+      (out_dropout): Dropout(p=0.1, inplace=False)
+      (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+    )
+  )
+  (attention_layer): ModuleList(
+    (0): MultiHeadAttention(
+      (q_linear): Linear(in_features=64, out_features=64, bias=True)
+      (k_linear): Linear(in_features=64, out_features=64, bias=True)
+      (v_linear): Linear(in_features=64, out_features=64, bias=True)
+    )
+  )
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6931 [11.6 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.4 s] *
+INFO:root:Epoch 2     loss=0.6931 [9.5 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.3 s] *
+INFO:root:Epoch 3     loss=0.6931 [9.5 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.3 s] *
+INFO:root:Epoch 4     loss=0.6931 [9.4 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.3 s] *
+INFO:root:Epoch 5     loss=0.6931 [9.5 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.3 s] *
+INFO:root:Epoch 6     loss=0.6931 [9.8 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.7 s] *
+INFO:root:Epoch 7     loss=0.6931 [10.0 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.3 s] *
+INFO:root:Epoch 8     loss=0.6931 [9.7 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.7 s] *
+INFO:root:Epoch 9     loss=0.6931 [9.5 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.4 s] *
+INFO:root:Epoch 10    loss=0.6931 [9.3 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.5 s] *
+INFO:root:Epoch 11    loss=0.6931 [9.5 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.4 s] *
+INFO:root:Epoch 12    loss=0.6931 [9.4 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.4 s] *
+INFO:root:Epoch 13    loss=0.6931 [9.3 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.4 s] *
+INFO:root:Epoch 14    loss=0.6931 [9.7 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.4 s] *
+INFO:root:Namespace(model_name='BSARec')
+INFO:root:--------------------------------------------- BEGIN: 2024-10-09 13:00:22 ---------------------------------------------
+INFO:root:
+============================================
+ Arguments           | Values               
+============================================
+ alpha               | 0.5                 
+ batch_size          | 256                 
+ dataset             | Grocery_and_Gourm...
+ dropout             | 0                   
+ early_stop          | 10                  
+ emb_size            | 64                  
+ epoch               | 200                 
+ eval_batch_size     | 256                 
+ gpu                 | 0                   
+ hidden_dropout_prob | 0.1                 
+ hidden_size         | 64                  
+ history_max         | 20                  
+ l2                  | 1e-06               
+ lr                  | 0.0001              
+ num_heads           | 1                   
+ num_layers          | 1                   
+ num_neg             | 1                   
+ num_workers         | 5                   
+ optimizer           | Adam                
+ random_seed         | 0                   
+ test_all            | 0                   
+ topk                | 5,10,20,50          
+============================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\SeqReader.pkl
+INFO:root:#params: 571712
+INFO:root:BSARec(
+  (i_embeddings): Embedding(8714, 64)
+  (p_embeddings): Embedding(21, 64)
+  (frequency_layer): ModuleList(
+    (0): FrequencyLayer(
+      (out_dropout): Dropout(p=0.1, inplace=False)
+      (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+    )
+  )
+  (attention_layer): ModuleList(
+    (0): MultiHeadAttention(
+      (q_linear): Linear(in_features=64, out_features=64, bias=True)
+      (k_linear): Linear(in_features=64, out_features=64, bias=True)
+      (v_linear): Linear(in_features=64, out_features=64, bias=True)
+    )
+  )
+)
+INFO:root:Optimizer: Adam
