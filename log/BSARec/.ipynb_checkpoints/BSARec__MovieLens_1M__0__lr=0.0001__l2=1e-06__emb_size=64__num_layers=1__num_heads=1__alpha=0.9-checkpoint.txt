@@ -1,0 +1,61 @@
+INFO:root:Namespace(model_name='BSARec')
+INFO:root:--------------------------------------------- BEGIN: 2024-10-09 13:29:42 ---------------------------------------------
+INFO:root:
+====================================
+ Arguments           | Values       
+====================================
+ alpha               | 0.9         
+ batch_size          | 256         
+ c                   | 3           
+ dataset             | MovieLens_1M
+ dropout             | 0           
+ early_stop          | 10          
+ emb_size            | 64          
+ epoch               | 200         
+ eval_batch_size     | 256         
+ gpu                 | 0           
+ hidden_dropout_prob | 0.5         
+ hidden_size         | 64          
+ history_max         | 20          
+ l2                  | 1e-06       
+ lr                  | 0.0001      
+ num_heads           | 1           
+ num_layers          | 1           
+ num_neg             | 1           
+ num_workers         | 5           
+ optimizer           | Adam        
+ random_seed         | 0           
+ test_all            | 0           
+ topk                | 5,10,20,50  
+====================================
+INFO:root:Device: cuda
+INFO:root:Reading data from "../data/", dataset = "MovieLens_1M" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 6032, "# item": 3125, "# entry": 574197
+INFO:root:Appending history info...
+INFO:root:Save corpus to ../data/MovieLens_1M\SeqReader.pkl
+INFO:root:#params: 214080
+INFO:root:BSARec(
+  (i_embeddings): Embedding(3126, 64)
+  (p_embeddings): Embedding(21, 64)
+  (frequency_layer): ModuleList(
+    (0): FrequencyLayer(
+      (out_dropout): Dropout(p=0.5, inplace=False)
+      (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+    )
+  )
+  (attention_layer): ModuleList(
+    (0): MultiHeadAttention(
+      (q_linear): Linear(in_features=64, out_features=64, bias=True)
+      (k_linear): Linear(in_features=64, out_features=64, bias=True)
+      (v_linear): Linear(in_features=64, out_features=64, bias=True)
+    )
+  )
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6931 [24.5 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [6.5 s] *
+INFO:root:Epoch 2     loss=0.6931 [22.2 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [6.5 s] *
+INFO:root:Epoch 3     loss=0.6931 [22.5 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [6.4 s] *
+INFO:root:Epoch 4     loss=0.6931 [22.1 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [6.4 s] *
+INFO:root:Epoch 5     loss=0.6931 [24.0 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [7.2 s] *
+INFO:root:Epoch 6     loss=0.6931 [22.6 s]    dev=(HR@5:1.0000,NDCG@5:1.0000) [6.6 s] *

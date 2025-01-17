@@ -1,0 +1,30 @@
+INFO:root:Namespace(model_name='MyModel')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-27 09:22:10 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 10                  
+ epoch           | 200                 
+ eval_batch_size | 256                 
+ gpu             |                     
+ l2              | 1e-06               
+ lr              | 0.001               
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 0                   
+ test_all        | 0                   
+ topk            | 5,10,20,50          
+========================================
+INFO:root:Device: cpu
+INFO:root:Reading data from "../data/", dataset = "Grocery_and_Gourmet_Food" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 14681, "# item": 8713, "# entry": 151254
+INFO:root:Save corpus to ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 0
+INFO:root:MyModel()
+INFO:root:Optimizer: Adam

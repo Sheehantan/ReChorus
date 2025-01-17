@@ -1,0 +1,36 @@
+INFO:root:Namespace(model_name='BUIR')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-27 11:18:28 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 10                  
+ emb_size        | 64                  
+ epoch           | 200                 
+ eval_batch_size | 256                 
+ gpu             |                     
+ l2              | 1e-06               
+ lr              | 0.001               
+ momentum        | 0.995               
+ num_neg         | 1                   
+ num_workers     | 0                   
+ optimizer       | Adam                
+ random_seed     | 0                   
+ test_all        | 0                   
+ topk            | 5,10,20,50          
+========================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1501504
+INFO:root:BUIR(
+  (user_online): Embedding(14682, 64)
+  (user_target): Embedding(14682, 64)
+  (item_online): Embedding(8714, 64)
+  (item_target): Embedding(8714, 64)
+  (predictor): Linear(in_features=64, out_features=64, bias=True)
+  (bn): BatchNorm1d(64, eps=0, momentum=0.1, affine=False, track_running_stats=False)
+)
+INFO:root:Optimizer: Adam

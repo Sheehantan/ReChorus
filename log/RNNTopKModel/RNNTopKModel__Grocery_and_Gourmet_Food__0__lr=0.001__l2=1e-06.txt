@@ -1,0 +1,99 @@
+INFO:root:Namespace(model_name='RNNTopKModel')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-27 09:43:56 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 10                  
+ epoch           | 200                 
+ eval_batch_size | 256                 
+ gpu             |                     
+ l2              | 1e-06               
+ lr              | 0.001               
+ num_neg         | 1                   
+ num_workers     | 5                   
+ optimizer       | Adam                
+ random_seed     | 0                   
+ test_all        | 0                   
+ topk            | 5,10,20,50          
+========================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 3916545
+INFO:root:RNNTopKModel(
+  (rnn): LSTM(128, 256, num_layers=2, batch_first=True)
+  (user_embedding): Embedding(14682, 128)
+  (item_embedding): Embedding(8714, 128)
+  (fc): Linear(in_features=256, out_features=1, bias=True)
+  (dropout): Dropout(p=0, inplace=False)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Namespace(model_name='RNNTopKModel')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-27 09:44:27 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 10                  
+ epoch           | 200                 
+ eval_batch_size | 256                 
+ gpu             |                     
+ l2              | 1e-06               
+ lr              | 0.001               
+ num_neg         | 1                   
+ num_workers     | 0                   
+ optimizer       | Adam                
+ random_seed     | 0                   
+ test_all        | 0                   
+ topk            | 5,10,20,50          
+========================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 3916545
+INFO:root:RNNTopKModel(
+  (rnn): LSTM(128, 256, num_layers=2, batch_first=True)
+  (user_embedding): Embedding(14682, 128)
+  (item_embedding): Embedding(8714, 128)
+  (fc): Linear(in_features=256, out_features=1, bias=True)
+  (dropout): Dropout(p=0, inplace=False)
+)
+INFO:root:Optimizer: Adam
+INFO:root:Namespace(model_name='RNNTopKModel')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-27 10:40:35 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ dataset         | Grocery_and_Gourm...
+ dropout         | 0                   
+ early_stop      | 10                  
+ epoch           | 200                 
+ eval_batch_size | 256                 
+ gpu             |                     
+ l2              | 1e-06               
+ lr              | 0.001               
+ num_neg         | 1                   
+ num_workers     | 0                   
+ optimizer       | Adam                
+ random_seed     | 0                   
+ test_all        | 0                   
+ topk            | 5,10,20,50          
+========================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 3916545
+INFO:root:RNNTopKModel(
+  (rnn): LSTM(128, 256, num_layers=2, batch_first=True)
+  (user_embedding): Embedding(14682, 128)
+  (item_embedding): Embedding(8714, 128)
+  (fc): Linear(in_features=256, out_features=1, bias=True)
+  (dropout): Dropout(p=0, inplace=False)
+)
+INFO:root:Optimizer: Adam

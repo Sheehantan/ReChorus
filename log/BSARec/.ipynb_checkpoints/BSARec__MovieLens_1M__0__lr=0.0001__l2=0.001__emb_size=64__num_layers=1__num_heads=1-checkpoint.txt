@@ -1,0 +1,68 @@
+INFO:root:Namespace(model_name='BSARec')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-24 14:41:51 ---------------------------------------------
+INFO:root:
+=============================================
+ Arguments                    | Values       
+=============================================
+ alpha                        | 0.9         
+ attention_probs_dropout_prob | 0.1         
+ batch_size                   | 256         
+ c                            | 3           
+ dataset                      | MovieLens_1M
+ dropout                      | 0           
+ early_stop                   | 10          
+ emb_size                     | 64          
+ epoch                        | 200         
+ eval_batch_size              | 256         
+ gpu                          |             
+ hidden_dropout_prob          | 0.1         
+ hidden_size                  | 64          
+ history_max                  | 50          
+ l2                           | 0.001       
+ lr                           | 0.0001      
+ num_heads                    | 1           
+ num_layers                   | 1           
+ num_neg                      | 1           
+ num_workers                  | 0           
+ optimizer                    | Adam        
+ random_seed                  | 0           
+ test_all                     | 0           
+ topk                         | 5,10,20,50  
+=============================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from ../data/MovieLens_1M/SeqReader.pkl
+INFO:root:#params: 253504
+INFO:root:BSARec(
+  (i_embeddings): Embedding(3126, 64)
+  (p_embeddings): Embedding(51, 64)
+  (transformer_block): ModuleList(
+    (0): BSARecBlock(
+      (layer): BSARecLayer(
+        (filter_layer): FrequencyLayer(
+          (out_dropout): Dropout(p=0, inplace=False)
+          (LayerNorm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        )
+        (attention_layer): MultiHeadAttention(
+          (query): Linear(in_features=64, out_features=64, bias=True)
+          (key): Linear(in_features=64, out_features=64, bias=True)
+          (value): Linear(in_features=64, out_features=64, bias=True)
+          (softmax): Softmax(dim=-1)
+          (attn_dropout): Dropout(p=0.1, inplace=False)
+          (dense): Linear(in_features=64, out_features=64, bias=True)
+          (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+          (out_dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+      (feed_forward): FeedForward(
+        (dense_1): Linear(in_features=64, out_features=256, bias=True)
+        (dense_2): Linear(in_features=256, out_features=64, bias=True)
+        (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+)
+INFO:root:Optimizer: Adam
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-24 14:42:02 ---------------------------------------------

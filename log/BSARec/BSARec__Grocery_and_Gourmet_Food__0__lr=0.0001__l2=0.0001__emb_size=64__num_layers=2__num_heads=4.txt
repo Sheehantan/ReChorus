@@ -1,0 +1,131 @@
+INFO:root:Namespace(model_name='BSARec')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-05 00:28:04 ---------------------------------------------
+INFO:root:
+=====================================================
+ Arguments                    | Values               
+=====================================================
+ alpha                        | 0.1                 
+ attention_probs_dropout_prob | 0.1                 
+ batch_size                   | 256                 
+ c                            | 1                   
+ dataset                      | Grocery_and_Gourm...
+ dropout                      | 0                   
+ early_stop                   | 10                  
+ emb_size                     | 64                  
+ epoch                        | 200                 
+ eval_batch_size              | 256                 
+ gpu                          | 0                   
+ hidden_dropout_prob          | 0.1                 
+ hidden_size                  | 64                  
+ history_max                  | 50                  
+ l2                           | 0.0001              
+ lr                           | 0.0001              
+ num_heads                    | 4                   
+ num_layers                   | 2                   
+ num_neg                      | 1                   
+ num_workers                  | 0                   
+ optimizer                    | Adam                
+ random_seed                  | 0                   
+ test_all                     | 0                   
+ topk                         | 5,10,20,50          
+=====================================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\SeqReader.pkl
+INFO:root:#params: 661312
+INFO:root:BSARec(
+  (i_embeddings): Embedding(8714, 64)
+  (p_embeddings): Embedding(51, 64)
+  (transformer_block): ModuleList(
+    (0): BSARecBlock(
+      (layer): BSARecLayer(
+        (filter_layer): FrequencyLayer(
+          (out_dropout): Dropout(p=0, inplace=False)
+          (LayerNorm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        )
+        (attention_layer): MultiHeadAttention(
+          (query): Linear(in_features=64, out_features=64, bias=True)
+          (key): Linear(in_features=64, out_features=64, bias=True)
+          (value): Linear(in_features=64, out_features=64, bias=True)
+          (softmax): Softmax(dim=-1)
+          (attn_dropout): Dropout(p=0.1, inplace=False)
+          (dense): Linear(in_features=64, out_features=64, bias=True)
+          (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+          (out_dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+      (feed_forward): FeedForward(
+        (dense_1): Linear(in_features=64, out_features=256, bias=True)
+        (dense_2): Linear(in_features=256, out_features=64, bias=True)
+        (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (1): BSARecBlock(
+      (layer): BSARecLayer(
+        (filter_layer): FrequencyLayer(
+          (out_dropout): Dropout(p=0, inplace=False)
+          (LayerNorm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        )
+        (attention_layer): MultiHeadAttention(
+          (query): Linear(in_features=64, out_features=64, bias=True)
+          (key): Linear(in_features=64, out_features=64, bias=True)
+          (value): Linear(in_features=64, out_features=64, bias=True)
+          (softmax): Softmax(dim=-1)
+          (attn_dropout): Dropout(p=0.1, inplace=False)
+          (dense): Linear(in_features=64, out_features=64, bias=True)
+          (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+          (out_dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+      (feed_forward): FeedForward(
+        (dense_1): Linear(in_features=64, out_features=256, bias=True)
+        (dense_2): Linear(in_features=256, out_features=64, bias=True)
+        (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.6155 [23.0 s]    dev=(HR@5:0.2448,NDCG@5:0.1599) [0.9 s] *
+INFO:root:Epoch 2     loss=0.5007 [21.0 s]    dev=(HR@5:0.2456,NDCG@5:0.1607) [0.9 s] *
+INFO:root:Epoch 3     loss=0.4552 [20.8 s]    dev=(HR@5:0.2466,NDCG@5:0.1614) [0.9 s] *
+INFO:root:Epoch 4     loss=0.4320 [20.9 s]    dev=(HR@5:0.2509,NDCG@5:0.1642) [0.9 s] *
+INFO:root:Epoch 5     loss=0.4119 [20.8 s]    dev=(HR@5:0.2578,NDCG@5:0.1696) [0.9 s] *
+INFO:root:Epoch 6     loss=0.3932 [21.0 s]    dev=(HR@5:0.2734,NDCG@5:0.1822) [0.9 s] *
+INFO:root:Epoch 7     loss=0.3767 [20.9 s]    dev=(HR@5:0.2934,NDCG@5:0.1973) [0.9 s] *
+INFO:root:Epoch 8     loss=0.3615 [20.9 s]    dev=(HR@5:0.3028,NDCG@5:0.2054) [0.9 s] *
+INFO:root:Epoch 9     loss=0.3475 [21.0 s]    dev=(HR@5:0.3206,NDCG@5:0.2185) [0.9 s] *
+INFO:root:Epoch 10    loss=0.3336 [20.9 s]    dev=(HR@5:0.3271,NDCG@5:0.2245) [0.9 s] *
+INFO:root:Epoch 11    loss=0.3200 [21.0 s]    dev=(HR@5:0.3386,NDCG@5:0.2329) [0.9 s] *
+INFO:root:Epoch 12    loss=0.3070 [20.9 s]    dev=(HR@5:0.3460,NDCG@5:0.2390) [0.9 s] *
+INFO:root:Epoch 13    loss=0.2942 [20.8 s]    dev=(HR@5:0.3615,NDCG@5:0.2526) [0.9 s] *
+INFO:root:Epoch 14    loss=0.2828 [21.0 s]    dev=(HR@5:0.3690,NDCG@5:0.2587) [0.9 s] *
+INFO:root:Epoch 15    loss=0.2724 [20.9 s]    dev=(HR@5:0.3755,NDCG@5:0.2639) [0.9 s] *
+INFO:root:Epoch 16    loss=0.2610 [20.9 s]    dev=(HR@5:0.3790,NDCG@5:0.2693) [0.9 s] *
+INFO:root:Epoch 17    loss=0.2497 [21.1 s]    dev=(HR@5:0.3816,NDCG@5:0.2704) [0.9 s] *
+INFO:root:Epoch 18    loss=0.2393 [21.0 s]    dev=(HR@5:0.3960,NDCG@5:0.2868) [0.9 s] *
+INFO:root:Epoch 19    loss=0.2285 [21.0 s]    dev=(HR@5:0.3975,NDCG@5:0.2882) [0.9 s] *
+INFO:root:Epoch 20    loss=0.2198 [21.0 s]    dev=(HR@5:0.4010,NDCG@5:0.2925) [0.9 s] *
+INFO:root:Epoch 21    loss=0.2080 [21.0 s]    dev=(HR@5:0.4051,NDCG@5:0.2956) [1.0 s] *
+INFO:root:Epoch 22    loss=0.1999 [21.0 s]    dev=(HR@5:0.4107,NDCG@5:0.3013) [0.9 s] *
+INFO:root:Epoch 23    loss=0.1925 [21.0 s]    dev=(HR@5:0.4135,NDCG@5:0.3052) [0.9 s] *
+INFO:root:Epoch 24    loss=0.1842 [21.1 s]    dev=(HR@5:0.4164,NDCG@5:0.3092) [0.9 s] *
+INFO:root:Epoch 25    loss=0.1756 [21.2 s]    dev=(HR@5:0.4204,NDCG@5:0.3128) [0.9 s] *
+INFO:root:Epoch 26    loss=0.1687 [20.9 s]    dev=(HR@5:0.4248,NDCG@5:0.3183) [0.9 s] *
+INFO:root:Epoch 27    loss=0.1615 [21.0 s]    dev=(HR@5:0.4243,NDCG@5:0.3184) [0.9 s] *
+INFO:root:Epoch 28    loss=0.1552 [21.0 s]    dev=(HR@5:0.4291,NDCG@5:0.3229) [0.9 s] *
+INFO:root:Epoch 29    loss=0.1490 [20.8 s]    dev=(HR@5:0.4264,NDCG@5:0.3212) [0.9 s]
+INFO:root:Epoch 30    loss=0.1418 [20.9 s]    dev=(HR@5:0.4289,NDCG@5:0.3236) [0.9 s] *
+INFO:root:Epoch 31    loss=0.1362 [20.8 s]    dev=(HR@5:0.4351,NDCG@5:0.3290) [1.0 s] *
+INFO:root:Epoch 32    loss=0.1319 [20.9 s]    dev=(HR@5:0.4360,NDCG@5:0.3293) [0.9 s] *
+INFO:root:Epoch 33    loss=0.1267 [20.9 s]    dev=(HR@5:0.4372,NDCG@5:0.3312) [0.9 s] *
+INFO:root:Epoch 34    loss=0.1212 [21.0 s]    dev=(HR@5:0.4381,NDCG@5:0.3335) [0.9 s] *
+INFO:root:Epoch 35    loss=0.1171 [20.8 s]    dev=(HR@5:0.4397,NDCG@5:0.3343) [0.9 s] *
+INFO:root:Epoch 36    loss=0.1112 [21.0 s]    dev=(HR@5:0.4387,NDCG@5:0.3349) [0.9 s] *
+INFO:root:Epoch 37    loss=0.1079 [21.0 s]    dev=(HR@5:0.4385,NDCG@5:0.3350) [1.0 s] *
+INFO:root:Epoch 38    loss=0.1048 [48.8 s]    dev=(HR@5:0.4374,NDCG@5:0.3336) [1.0 s]
+INFO:root:Epoch 39    loss=0.1013 [21.3 s]    dev=(HR@5:0.4385,NDCG@5:0.3345) [0.9 s]
+INFO:root:Epoch 40    loss=0.0973 [22.0 s]    dev=(HR@5:0.4404,NDCG@5:0.3366) [1.0 s] *
+INFO:root:Epoch 41    loss=0.0950 [22.2 s]    dev=(HR@5:0.4417,NDCG@5:0.3379) [1.0 s] *
+INFO:root:Epoch 42    loss=0.0916 [21.5 s]    dev=(HR@5:0.4429,NDCG@5:0.3391) [1.0 s] *

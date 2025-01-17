@@ -1,0 +1,22 @@
+INFO:root:Namespace(model_name='SANSA')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-27 11:26:51 ---------------------------------------------
+INFO:root:
+========================================
+ Arguments       | Values               
+========================================
+ batch_size      | 256                 
+ dataset         | Grocery_and_Gourm...
+ early_stop      | 10                  
+ epoch           | 200                 
+ eval_batch_size | 256                 
+ gpu             |                     
+ l2              | 1e-06               
+ lambda_reg      | 0.01                
+ lr              | 0.001               
+ num_workers     | 0                   
+ optimizer       | Adam                
+ random_seed     | 0                   
+ topk            | 5,10,20,50          
+========================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl

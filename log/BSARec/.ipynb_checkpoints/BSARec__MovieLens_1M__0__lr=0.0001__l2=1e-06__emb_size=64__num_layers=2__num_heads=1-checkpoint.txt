@@ -1,0 +1,131 @@
+INFO:root:Namespace(model_name='BSARec')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-30 21:02:47 ---------------------------------------------
+INFO:root:
+=============================================
+ Arguments                    | Values       
+=============================================
+ alpha                        | 0.3         
+ attention_probs_dropout_prob | 0.1         
+ batch_size                   | 256         
+ c                            | 3           
+ dataset                      | MovieLens_1M
+ dropout                      | 0           
+ early_stop                   | 10          
+ emb_size                     | 64          
+ epoch                        | 200         
+ eval_batch_size              | 256         
+ gpu                          | 0           
+ hidden_dropout_prob          | 0.1         
+ hidden_size                  | 64          
+ history_max                  | 50          
+ l2                           | 1e-06       
+ lr                           | 0.0001      
+ num_heads                    | 1           
+ num_layers                   | 2           
+ num_neg                      | 1           
+ num_workers                  | 0           
+ optimizer                    | Adam        
+ random_seed                  | 0           
+ test_all                     | 0           
+ topk                         | 5,10,20,50  
+=============================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/MovieLens_1M/SeqReader.pkl
+INFO:root:#params: 303680
+INFO:root:BSARec(
+  (i_embeddings): Embedding(3126, 64)
+  (p_embeddings): Embedding(51, 64)
+  (transformer_block): ModuleList(
+    (0): BSARecBlock(
+      (layer): BSARecLayer(
+        (filter_layer): FrequencyLayer(
+          (out_dropout): Dropout(p=0, inplace=False)
+          (LayerNorm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        )
+        (attention_layer): MultiHeadAttention(
+          (query): Linear(in_features=64, out_features=64, bias=True)
+          (key): Linear(in_features=64, out_features=64, bias=True)
+          (value): Linear(in_features=64, out_features=64, bias=True)
+          (softmax): Softmax(dim=-1)
+          (attn_dropout): Dropout(p=0.1, inplace=False)
+          (dense): Linear(in_features=64, out_features=64, bias=True)
+          (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+          (out_dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+      (feed_forward): FeedForward(
+        (dense_1): Linear(in_features=64, out_features=256, bias=True)
+        (dense_2): Linear(in_features=256, out_features=64, bias=True)
+        (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+    (1): BSARecBlock(
+      (layer): BSARecLayer(
+        (filter_layer): FrequencyLayer(
+          (out_dropout): Dropout(p=0, inplace=False)
+          (LayerNorm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        )
+        (attention_layer): MultiHeadAttention(
+          (query): Linear(in_features=64, out_features=64, bias=True)
+          (key): Linear(in_features=64, out_features=64, bias=True)
+          (value): Linear(in_features=64, out_features=64, bias=True)
+          (softmax): Softmax(dim=-1)
+          (attn_dropout): Dropout(p=0.1, inplace=False)
+          (dense): Linear(in_features=64, out_features=64, bias=True)
+          (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+          (out_dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+      (feed_forward): FeedForward(
+        (dense_1): Linear(in_features=64, out_features=256, bias=True)
+        (dense_2): Linear(in_features=256, out_features=64, bias=True)
+        (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.3985 [61.6 s]    dev=(HR@5:0.3407,NDCG@5:0.2291) [0.1 s] *
+INFO:root:Epoch 2     loss=0.2990 [57.9 s]    dev=(HR@5:0.3782,NDCG@5:0.2499) [0.1 s] *
+INFO:root:Epoch 3     loss=0.2522 [59.8 s]    dev=(HR@5:0.3962,NDCG@5:0.2633) [0.1 s] *
+INFO:root:Epoch 4     loss=0.2222 [58.6 s]    dev=(HR@5:0.4321,NDCG@5:0.2909) [0.1 s] *
+INFO:root:Epoch 5     loss=0.1947 [60.0 s]    dev=(HR@5:0.4551,NDCG@5:0.3175) [0.1 s] *
+INFO:root:Epoch 6     loss=0.1742 [60.4 s]    dev=(HR@5:0.4578,NDCG@5:0.3232) [0.1 s] *
+INFO:root:Epoch 7     loss=0.1616 [59.9 s]    dev=(HR@5:0.4742,NDCG@5:0.3352) [0.1 s] *
+INFO:root:Epoch 8     loss=0.1513 [60.8 s]    dev=(HR@5:0.4699,NDCG@5:0.3340) [0.1 s]
+INFO:root:Epoch 9     loss=0.1425 [60.3 s]    dev=(HR@5:0.4832,NDCG@5:0.3467) [0.1 s] *
+INFO:root:Epoch 10    loss=0.1357 [59.0 s]    dev=(HR@5:0.4953,NDCG@5:0.3503) [0.1 s] *
+INFO:root:Epoch 11    loss=0.1309 [59.9 s]    dev=(HR@5:0.5062,NDCG@5:0.3579) [0.1 s] *
+INFO:root:Epoch 12    loss=0.1265 [60.7 s]    dev=(HR@5:0.5090,NDCG@5:0.3589) [0.1 s] *
+INFO:root:Epoch 13    loss=0.1226 [60.8 s]    dev=(HR@5:0.5164,NDCG@5:0.3644) [0.1 s] *
+INFO:root:Epoch 14    loss=0.1187 [60.6 s]    dev=(HR@5:0.5203,NDCG@5:0.3664) [0.1 s] *
+INFO:root:Epoch 15    loss=0.1161 [59.7 s]    dev=(HR@5:0.5191,NDCG@5:0.3659) [0.1 s]
+INFO:root:Epoch 16    loss=0.1125 [60.0 s]    dev=(HR@5:0.5273,NDCG@5:0.3743) [0.1 s] *
+INFO:root:Epoch 17    loss=0.1102 [59.3 s]    dev=(HR@5:0.5215,NDCG@5:0.3697) [0.1 s]
+INFO:root:Epoch 18    loss=0.1079 [60.0 s]    dev=(HR@5:0.5258,NDCG@5:0.3749) [0.1 s] *
+INFO:root:Epoch 19    loss=0.1053 [59.6 s]    dev=(HR@5:0.5219,NDCG@5:0.3748) [0.1 s]
+INFO:root:Epoch 20    loss=0.1040 [59.9 s]    dev=(HR@5:0.5289,NDCG@5:0.3786) [0.1 s] *
+INFO:root:Epoch 21    loss=0.1025 [59.9 s]    dev=(HR@5:0.5180,NDCG@5:0.3734) [0.1 s]
+INFO:root:Epoch 22    loss=0.1005 [60.1 s]    dev=(HR@5:0.5230,NDCG@5:0.3786) [0.1 s] *
+INFO:root:Epoch 23    loss=0.0987 [58.2 s]    dev=(HR@5:0.5195,NDCG@5:0.3745) [0.1 s]
+INFO:root:Epoch 24    loss=0.0969 [58.7 s]    dev=(HR@5:0.5289,NDCG@5:0.3782) [0.1 s]
+INFO:root:Epoch 25    loss=0.0956 [61.4 s]    dev=(HR@5:0.5269,NDCG@5:0.3781) [0.1 s]
+INFO:root:Epoch 26    loss=0.0942 [59.4 s]    dev=(HR@5:0.5250,NDCG@5:0.3750) [0.1 s]
+INFO:root:Epoch 27    loss=0.0929 [60.4 s]    dev=(HR@5:0.5277,NDCG@5:0.3788) [0.1 s] *
+INFO:root:Epoch 28    loss=0.0925 [59.7 s]    dev=(HR@5:0.5254,NDCG@5:0.3777) [0.1 s]
+INFO:root:Epoch 29    loss=0.0910 [59.7 s]    dev=(HR@5:0.5242,NDCG@5:0.3744) [0.1 s]
+INFO:root:Epoch 30    loss=0.0908 [58.0 s]    dev=(HR@5:0.5351,NDCG@5:0.3839) [0.1 s] *
+INFO:root:Epoch 31    loss=0.0897 [60.3 s]    dev=(HR@5:0.5254,NDCG@5:0.3759) [0.1 s]
+INFO:root:Epoch 32    loss=0.0882 [59.7 s]    dev=(HR@5:0.5312,NDCG@5:0.3802) [0.1 s]
+INFO:root:Epoch 33    loss=0.0869 [58.9 s]    dev=(HR@5:0.5203,NDCG@5:0.3723) [0.1 s]
+INFO:root:Epoch 34    loss=0.0860 [60.2 s]    dev=(HR@5:0.5238,NDCG@5:0.3747) [0.1 s]
+INFO:root:Epoch 35    loss=0.0863 [59.7 s]    dev=(HR@5:0.5285,NDCG@5:0.3788) [0.1 s]
+INFO:root:Epoch 36    loss=0.0838 [60.3 s]    dev=(HR@5:0.5254,NDCG@5:0.3783) [0.1 s]
+INFO:root:Epoch 37    loss=0.0844 [59.5 s]    dev=(HR@5:0.5316,NDCG@5:0.3775) [0.1 s]
+INFO:root:Epoch 38    loss=0.0839 [61.0 s]    dev=(HR@5:0.5281,NDCG@5:0.3765) [0.1 s]
+INFO:root:Epoch 39    loss=0.0828 [59.1 s]    dev=(HR@5:0.5328,NDCG@5:0.3807) [0.1 s]
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-30 21:41:51 ---------------------------------------------
